@@ -1,17 +1,6 @@
-import React from "react";
-import axios from "axios";
+import Poll from "./components/Poll/Poll";
 
 const App = () => {
-  React.useEffect(() => {
-    axios
-      .get(`http://localhost:8080`)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
-  return <> </>;
+  return <Poll />;
 };
 export default App;

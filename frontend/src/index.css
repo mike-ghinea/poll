@@ -1,0 +1,22 @@
+html {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+body {
+  background-image: linear-gradient(45deg, rgb(58, 1, 58, 0.9), rgb(75, 0, 130)),
+    linear-gradient(90deg, rgb(129, 21, 206), rgba(34, 2, 34, 0.8));
+  height: 100%;
+  display: table-cell;
+  font-family: serif;
+  #root {
+    height: 100%;
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
