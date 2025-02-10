@@ -1,5 +1,5 @@
 import axios from "axios";
-import { apiRoot, pollDomain } from "./utils";
+import { apiRoot, pollDomain } from "../utils/request.utils";
 
 export const getVotes = () => {
   return axios.get(`${apiRoot}${pollDomain}/active/vote_count`);

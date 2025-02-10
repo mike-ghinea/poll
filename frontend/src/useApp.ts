@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getActivePoll } from "./requests/poll";
-import { Poll } from "./requests/utils";
+import { Poll } from "./requests/models";
 
 export const useApp = () => {
   const [isLoading, setIsLoading] = useState(false);

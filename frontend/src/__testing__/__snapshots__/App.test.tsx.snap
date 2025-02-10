@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render correctly 1`] = `
+<body>
+  <div>
+    <div
+      class="sc-FEMpB jnEXiv"
+    >
+      <h1
+        class="sc-dycHyt epsnkE"
+      >
+        Why?
+      </h1>
+      <div
+        class="sc-gjcoXW eBlsSB"
+      />
+      <button
+        aria-disabled="true"
+        class="sc-jbAkgO dsqhJQ"
+        disabled=""
+        role="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </div>
+</body>
+`;

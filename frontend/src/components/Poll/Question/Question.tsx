@@ -1,4 +1,4 @@
-import { Poll } from "../../../requests/utils";
+import { Poll } from "../../../requests/models";
 import { ErrorMessage, SIZE } from "../../ErrorMessage/ErrorMessage";
 import { LoadingBox } from "../../LoadingBox/LoadingBox";
 import s from "../Poll.styles";

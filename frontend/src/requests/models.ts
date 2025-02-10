@@ -1,6 +1,3 @@
-export const apiRoot = "http://localhost:8080";
-export const pollDomain = "/api/poll";
-
 export interface PollOption {
   id: string;
   text: string;

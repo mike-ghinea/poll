@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getVotes } from "../../../requests/vote";
-import { PollOptionWithVoteCount } from "../../../requests/utils";
+import { PollOptionWithVoteCount } from "../../../requests/models";
 
 export const useResult = () => {
   const [isLoading, setIsLoading] = useState(false);
