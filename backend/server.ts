@@ -2,6 +2,8 @@ import express, { Request, Response, Application } from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 
+import pollRoutes from "./routes/pollRoutes";
+
 dotenv.config();
 
 const app: Application = express();
@@ -15,10 +17,13 @@ const corsOptions = {
 };
 
 app.use(cors(corsOptions));
+app.use(express.json());
 
-app.get("/", (_: Request, res: Response) => {
+app.get("/api", (_: Request, res: Response) => {
   res.send("Server is working.");
 });
+
+app.use("/api/poll", pollRoutes);
 
 app.listen(port, () => {
   console.log(`Server is listening at https://localhost:${port}...`);

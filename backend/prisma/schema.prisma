@@ -15,9 +15,11 @@ datasource db {
 
 model Vote {
   id           Int        @id @default(autoincrement())
-  date         DateTime
+  date         DateTime   @default(now())
   pollOptionId Int
+  pollId       Int
   pollOption   PollOption @relation(fields: [pollOptionId], references: [id])
+  poll         Poll       @relation(fields: [pollId], references: [id])
 }
 
 model PollOption {
@@ -25,11 +27,13 @@ model PollOption {
   text   String
   pollId Int
   poll   Poll   @relation(fields: [pollId], references: [id])
-  Vote   Vote[]
+  votes  Vote[]
 }
 
 model Poll {
   id       Int          @id @default(autoincrement())
+  isActive Boolean      @default(false)
   question String
   options  PollOption[]
+  votes    Vote[]
 }
