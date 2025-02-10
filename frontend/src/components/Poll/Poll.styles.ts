@@ -13,6 +13,7 @@ const OptionWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 1rem;
 `;
 
 const PollOption = styled.button<{ $hightlight: boolean }>`
@@ -24,6 +25,8 @@ const PollOption = styled.button<{ $hightlight: boolean }>`
   &:focus {
     background-color: rgba(255, 255, 255, 0.6);
   }
+
+  overflow: clip;
 
   ${(props) =>
     props.$hightlight &&
@@ -58,6 +61,8 @@ const PollResult = styled.div<{ $percentage: number }>`
 
   padding-left: 1rem;
   padding-right: 1rem;
+
+  overflow: clip;
 
   & > .side {
     width: 10%;
