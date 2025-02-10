@@ -1,32 +1,15 @@
 import { Poll } from "../../../requests/utils";
-import { postVote } from "../../../requests/vote";
 import { ErrorMessage, SIZE } from "../../ErrorMessage/ErrorMessage";
 import { LoadingBox } from "../../LoadingBox/LoadingBox";
 import s from "../Poll.styles";
-import React, { useState } from "react";
+import { useQuestion } from "./useQuestion";
 
 const Question: React.FC<{
   poll: Poll;
   showResults: () => void;
 }> = ({ poll, showResults }) => {
-  const [selectedOption, setSelectedOption] = React.useState<string>();
-
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string>();
-
-  const onSubmit = () => {
-    if (!selectedOption) return;
-    setIsLoading(true);
-    setError(undefined);
-    postVote(poll.id, selectedOption)
-      .then(() => showResults())
-      .catch(() =>
-        setError(
-          "Something went wrong while submitting your vote. Please try again later.",
-        ),
-      )
-      .finally(() => setIsLoading(false));
-  };
+  const { isLoading, error, selectedOption, onSubmit, updateSelectedOption } =
+    useQuestion(poll.id, showResults);
 
   if (isLoading) return <LoadingBox />;
 
@@ -41,7 +24,7 @@ const Question: React.FC<{
             key={option.id}
             onClick={(e) => {
               e.preventDefault();
-              setSelectedOption(option.id);
+              updateSelectedOption(option.id);
             }}
             $hightlight={option.id === selectedOption}
           >

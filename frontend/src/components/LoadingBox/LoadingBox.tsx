@@ -1,5 +1,5 @@
-import { LoadingIndicator } from "./Loading.styles";
+import s from "./Loading.styles";
 
 export const LoadingBox = () => {
-  return <LoadingIndicator />;
+  return <s.LoadingIndicator />;
 };

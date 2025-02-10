@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const LoadingIndicator = styled.div`
+const LoadingIndicator = styled.div`
   border: 16px solid #f3f3f3;
   border-top: 16px solid rgb(70, 0, 184);
   border-radius: 50%;
@@ -17,3 +17,7 @@ export const LoadingIndicator = styled.div`
     }
   }
 `;
+
+export default {
+  LoadingIndicator,
+};

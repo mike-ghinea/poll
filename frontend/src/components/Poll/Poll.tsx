@@ -1,11 +1,11 @@
 import s from "./Poll.styles";
-import React from "react";
+import { useState } from "react";
 import Result from "./Result/Result";
 import Question from "./Question/Question";
 import { Poll as PollInterface } from "../../requests/utils";
 
 const Poll: React.FC<{ poll: PollInterface }> = ({ poll }) => {
-  const [showResults, setShowResults] = React.useState(false);
+  const [showResults, setShowResults] = useState(false);
 
   return (
     <s.PollWrapper>
