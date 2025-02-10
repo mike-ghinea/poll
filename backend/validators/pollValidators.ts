@@ -37,17 +37,13 @@ export const validatePollBody = [
 
 const validPollId = param("poll_id")
   .exists()
-  .isInt()
-  .withMessage(
-    "Please provide a valid poll id. Poll ids are positive integers.",
-  );
+  .isUUID()
+  .withMessage("Please provide a valid poll id. Ids are UUIDs.");
 
 const validPollOptionId = param("poll_option_id")
   .exists()
-  .isInt()
-  .withMessage(
-    "Please provide a valid poll id. Poll ids are positive integers.",
-  );
+  .isUUID()
+  .withMessage("Please provide a valid poll option id. Ids are UUIDs.");
 
 export const validatePollId = [validPollId, handleValidationErrors];
 
