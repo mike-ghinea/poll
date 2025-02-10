@@ -48,14 +48,14 @@ Response:
 
 ```json
 {
-	"id": "string", // uuid
-	"question": "string",
-	"options": [
-		{
-			"id": "string", // uuid
-			"text": "string",
-		},
-	]
+  "id": "string", // uuid
+  "question": "string",
+  "options": [
+    {
+      "id": "string", // uuid
+      "text": "string",
+    },
+  ]
 }
 ```
 
@@ -67,18 +67,18 @@ Response:
 
 ```json
 {
-	"isActive": "boolean", // whether the poll is the currently active poll
-	"question": "string",
-	"votes": [
-		{
-			"id": "string", // uuid
-			"date": "1970-01-01T00:00:00.000Z", // datetime
-			"pollOption": {
-				"id": "string", // uuid
-				"text": "string"
-			}
-		}
-	]
+  "isActive": "boolean", // whether the poll is the currently active poll
+  "question": "string",
+  "votes": [
+    {
+      "id": "string", // uuid
+      "date": "1970-01-01T00:00:00.000Z", // datetime
+      "pollOption": {
+        "id": "string", // uuid
+        "text": "string"
+      }
+    }
+  ]
 }
 ```
 
@@ -92,10 +92,10 @@ Response:
 {
   "pollOptions": [
     {
-			"id": "string", // uuid
-			"text": "string",
-			"count": "number",
-		},
+      "id": "string", // uuid
+      "text": "string",
+      "count": "number",
+    },
   ]
 }
 ```
@@ -108,8 +108,8 @@ Required body:
 
 ```json
 {
-	"question": "string",
-	"pollOptions": ["string", "string"]
+  "question": "string",
+  "pollOptions": ["string", "string"]
 }
 ```
 
@@ -117,14 +117,14 @@ Response:
 
 ```json
 {
-	"id": "string", // uuid
-	"question": "string",
-	"options": [
-		{
-			"id": "string", // uuid
-			"text": "string"
-		},
-	]
+  "id": "string", // uuid
+  "question": "string",
+  "options": [
+    {
+      "id": "string", // uuid
+      "text": "string"
+    },
+  ]
 }
 ```
 
@@ -137,8 +137,8 @@ Response:
 ```json
 {
   "id": "string", // uuid
-	"date": "1970-01-01T00:00:00.000Z", // datetime
-	"pollOptionId": "string", // uuid
-	"pollId": "string", // uuid
+  "date": "1970-01-01T00:00:00.000Z", // datetime
+  "pollOptionId": "string", // uuid
+  "pollId": "string", // uuid
 }
 ```
