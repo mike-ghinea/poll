@@ -2,25 +2,17 @@ import s from "./Poll.styles";
 import React from "react";
 import Result from "./Result/Result";
 import Question from "./Question/Question";
+import { Poll as PollInterface } from "../../requests/utils";
 
-const Poll = () => {
-  const pollOptions: { id: number; text: string; percentage: number }[] = [
-    { id: 1, text: "Option A", percentage: 0.8 },
-    { id: 2, text: "Option B", percentage: 0.15 },
-    { id: 3, text: "Option C", percentage: 0.05 },
-  ];
-
+const Poll: React.FC<{ poll: PollInterface }> = ({ poll }) => {
   const [showResults, setShowResults] = React.useState(false);
 
   return (
     <s.PollWrapper>
       {showResults ? (
-        <Result pollOptions={pollOptions} />
+        <Result />
       ) : (
-        <Question
-          pollOptions={pollOptions}
-          showResults={() => setShowResults(true)}
-        />
+        <Question poll={poll} showResults={() => setShowResults(true)} />
       )}
     </s.PollWrapper>
   );

@@ -9,9 +9,13 @@ body {
     linear-gradient(90deg, rgb(129, 21, 206), rgba(34, 2, 34, 0.8));
   height: 100%;
   display: table-cell;
-  font-family: serif;
+  font-family: sans-serif;
   #root {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }
 

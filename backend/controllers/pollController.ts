@@ -118,9 +118,9 @@ const getVotesByPoll = async (req: Request, res: Response) => {
   } catch (error) {
     if (error instanceof PrismaClientKnownRequestError) {
       if (error.code === "P2025") {
-        console.error(`No poll with id ${req.params.id} found.`);
+        console.error(`No poll with id ${req.params.poll_id} found.`);
         res.status(404).json({
-          message: `No poll with id ${req.params.id} found.`,
+          message: `No poll with id ${req.params.poll_id} found.`,
         });
       } else {
         console.error("Prisma encountered an error:", error);

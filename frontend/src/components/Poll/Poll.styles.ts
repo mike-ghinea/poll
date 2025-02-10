@@ -38,7 +38,7 @@ const PollOption = styled.button<{ $hightlight: boolean }>`
   height: 3rem;
   width: 70vw;
   margin: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   @media (min-width: 1250px) {
     height: 5rem;
@@ -54,11 +54,18 @@ const PollResult = styled.div<{ $percentage: number }>`
   justify-content: space-between;
   align-items: center;
 
+  text-align: center;
+
   padding-left: 1rem;
   padding-right: 1rem;
 
   & > .side {
-    width: 4rem;
+    width: 10%;
+    font-size: 0.75rem;
+    @media (min-width: 1250px) {
+      width: 15%;
+      font-size: 1.5rem;
+    }
   }
 
   background: linear-gradient(
@@ -72,7 +79,7 @@ const PollResult = styled.div<{ $percentage: number }>`
   height: 3rem;
   width: 70vw;
   margin: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   @media (min-width: 1250px) {
     height: 5rem;
@@ -104,7 +111,7 @@ const SubmitButton = styled.button`
   height: 3rem;
   width: 70vw;
   margin: 0.5rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 
   @media (min-width: 1250px) {
     height: 5rem;

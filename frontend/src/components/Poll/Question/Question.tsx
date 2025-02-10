@@ -1,31 +1,51 @@
+import { Poll } from "../../../requests/utils";
+import { postVote } from "../../../requests/vote";
+import { ErrorMessage, SIZE } from "../../ErrorMessage/ErrorMessage";
+import { LoadingBox } from "../../LoadingBox/LoadingBox";
 import s from "../Poll.styles";
-import React from "react";
+import React, { useState } from "react";
 
 const Question: React.FC<{
-  pollOptions: { id: number; text: string; percentage: number }[];
+  poll: Poll;
   showResults: () => void;
-}> = ({ pollOptions, showResults }) => {
-  const [selectedOption, setSelectedOption] = React.useState<number>();
+}> = ({ poll, showResults }) => {
+  const [selectedOption, setSelectedOption] = React.useState<string>();
+
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string>();
+
   const onSubmit = () => {
-    console.log("Submitted:", selectedOption);
-    showResults();
+    if (!selectedOption) return;
+    setIsLoading(true);
+    setError(undefined);
+    postVote(poll.id, selectedOption)
+      .then(() => showResults())
+      .catch(() =>
+        setError(
+          "Something went wrong while submitting your vote. Please try again later.",
+        ),
+      )
+      .finally(() => setIsLoading(false));
   };
+
+  if (isLoading) return <LoadingBox />;
+
+  if (error) return <ErrorMessage size={SIZE.TITLE} message={error} />;
+
   return (
     <>
-      <s.Header>
-        What is heavier? A kilogramme of feathers or a kilogramme of steel?
-      </s.Header>
+      <s.Header>{poll.question}</s.Header>
       <s.OptionWrapper>
-        {pollOptions.map((pollOption) => (
+        {poll.options.map((option) => (
           <s.PollOption
-            key={pollOption.id}
+            key={option.id}
             onClick={(e) => {
               e.preventDefault();
-              setSelectedOption(pollOption.id);
+              setSelectedOption(option.id);
             }}
-            $hightlight={pollOption.id === selectedOption}
+            $hightlight={option.id === selectedOption}
           >
-            {pollOption.text}
+            {option.text}
           </s.PollOption>
         ))}
       </s.OptionWrapper>
