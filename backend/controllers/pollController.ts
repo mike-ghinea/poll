@@ -2,7 +2,7 @@ import { PrismaClientKnownRequestError } from "@prisma/client/runtime/library";
 import { Request, Response } from "express";
 import prisma from "../config/db";
 
-const getActivePoll = async (req: Request, res: Response) => {
+const getActivePoll = async (_: Request, res: Response) => {
   try {
     const poll = await prisma.poll.findFirstOrThrow({
       where: {
@@ -42,7 +42,7 @@ const getActivePoll = async (req: Request, res: Response) => {
   }
 };
 
-const getActivePollVoteCounts = async (req: Request, res: Response) => {
+const getActivePollVoteCounts = async (_: Request, res: Response) => {
   try {
     const poll = await prisma.poll.findFirstOrThrow({
       where: {

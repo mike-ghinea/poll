@@ -25,6 +25,10 @@ app.get("/api", (_: Request, res: Response) => {
 
 app.use("/api/poll", pollRoutes);
 
-app.listen(port, () => {
-  console.log(`Server is listening at https://localhost:${port}...`);
-});
+if (process.env.NODE_ENV !== "test") {
+  app.listen(port, () => {
+    console.log(`Server is listening at https://localhost:${port}...`);
+  });
+}
+
+export default app;
