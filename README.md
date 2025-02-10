@@ -1,6 +1,8 @@
 # Running the project
 
-The project has two folders: backend and frontend. They each run separately, the backend runs on port 8080 and the frontend runs on port 5173.
+The project has two folders: backend and frontend. 
+
+They each operate independently, the backend runs on port 8080 and the frontend runs on port 5173.
 
 ## Get the node packages
 
